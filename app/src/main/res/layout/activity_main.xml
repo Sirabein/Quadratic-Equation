@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/xPow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:text="@string/xPow"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toStartOf="@+id/b"
+        app:layout_constraintStart_toEndOf="@+id/a"
+        app:layout_constraintTop_toTopOf="@+id/b" />
+
+    <TextView
+        android:id="@+id/zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:text="@string/zero"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/xPow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/c"
+        app:layout_constraintTop_toTopOf="@+id/b" />
+
+    <TextView
+        android:id="@+id/x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:text="@string/x"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toStartOf="@+id/c"
+        app:layout_constraintStart_toEndOf="@+id/b"
+        app:layout_constraintTop_toTopOf="@+id/c" />
+
+    <EditText
+        android:id="@+id/c"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="numberSigned|numberDecimal"
+        android:textSize="30sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/zero"
+        app:layout_constraintEnd_toStartOf="@+id/zero"
+        app:layout_constraintStart_toEndOf="@+id/x" />
+
+    <EditText
+        android:id="@+id/a"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="6dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="numberDecimal|numberSigned"
+        android:textSize="30sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/xPow"
+        app:layout_constraintEnd_toStartOf="@+id/xPow"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/b"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="98dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="37dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="numberDecimal|numberSigned"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/answerTV"
+        app:layout_constraintEnd_toStartOf="@+id/x"
+        app:layout_constraintStart_toEndOf="@+id/xPow"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/answerTV"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="278dp"
+        android:gravity="center"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/b"
+        app:layout_constraintTop_toBottomOf="@+id/b" />
+
+    <Button
+        android:id="@+id/answerBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/answer"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answerTV" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:layout_marginBottom="64dp"
+        android:gravity="center"
+        android:text="@string/info"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answerBtn" />
+
+
+</android.support.constraint.ConstraintLayout>

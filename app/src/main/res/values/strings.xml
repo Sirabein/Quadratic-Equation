@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Квадратные Уравнения</string>
+    <string name="xPow">x²</string>
+    <string name="x">x</string>
+    <string name="zero">=0</string>
+    <string name="answer">Решить</string>
+    <string name="info">Если какоё-то слогаемое отсутствует, поставьте перед ним 0. Если коэффициента нет, поставьте вместо него 1 или -1.</string>
+</resources>
