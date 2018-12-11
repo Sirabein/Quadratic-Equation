@@ -42,7 +42,44 @@
         app:layout_constraintTop_toTopOf="@+id/c" />
 
     <EditText
+        android:id="@+id/a"
+        android:hint="a"
+        android:imeOptions="actionNext"
+        android:nextFocusForward="@id/b"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="6dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="numberSigned|numberDecimal"
+        android:textSize="30sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/xPow"
+        app:layout_constraintEnd_toStartOf="@+id/xPow"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/b"
+        android:hint="b"
+        android:nextClusterForward="@id/c"
+        android:imeOptions="actionNext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="98dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="37dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="numberSigned|numberDecimal"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/answerTV"
+        app:layout_constraintEnd_toStartOf="@+id/x"
+        app:layout_constraintStart_toEndOf="@+id/xPow"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
         android:id="@+id/c"
+        android:hint="c"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="6dp"
@@ -53,36 +90,6 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/zero"
         app:layout_constraintEnd_toStartOf="@+id/zero"
         app:layout_constraintStart_toEndOf="@+id/x" />
-
-    <EditText
-        android:id="@+id/a"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginEnd="6dp"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="numberDecimal|numberSigned"
-        android:textSize="30sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/xPow"
-        app:layout_constraintEnd_toStartOf="@+id/xPow"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/b"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="98dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginBottom="37dp"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="numberDecimal|numberSigned"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/answerTV"
-        app:layout_constraintEnd_toStartOf="@+id/x"
-        app:layout_constraintStart_toEndOf="@+id/xPow"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/answerTV"
