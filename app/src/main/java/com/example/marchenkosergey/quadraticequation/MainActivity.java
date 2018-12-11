@@ -2,6 +2,8 @@ package com.example.marchenkosergey.quadraticequation;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -26,7 +28,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         answerTV = findViewById(R.id.answerTV);
         answerBtn = findViewById(R.id.answerBtn);
         answerBtn.setOnClickListener(this);
+    }
 
+
+    String getFormatedNum(double i) {
+        int b;
+        if (i % 1 == 0.0 || i % 1 == -0.0) {
+            b = (int) i;
+          return String.valueOf(b);
+        }
+        return String.valueOf(i);
     }
 
     boolean setVariables() {
@@ -62,19 +73,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // ax^2 + bx = 0
         if (b != 0 && c == 0) {
             x1 = "0";
-            x2 = "" + -b/a;
+            x2 = getFormatedNum(-b/a);
         }
 
         // ax^2 + c == 0
         if (b == 0 && c != 0 && -c/a >= 0) {
             // if √ is int
             if (Math.sqrt(-c/a) % 1 == 0) {
-                x1 = "" + Math.sqrt(-c/a) ;
-                x2 = "" + -Math.sqrt(-c/a) ;
+                x1 = getFormatedNum(Math.sqrt(-c/a));
+                x2 = getFormatedNum(-Math.sqrt(-c/a));
             } // if √ isn't int
             else {
-                x1 = "√" + -c / a;
-                x2 = "-√" + -c / a;
+                x1 = "√" + getFormatedNum(-c/a);
+                x2 = "-√" + getFormatedNum(-c/a);
             }
         }
 
@@ -84,16 +95,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (d > 0 ) {
                 // if √ is int
                 if (Math.sqrt(d) % 1 == 0) {
-                    x1 = "" + (-b + Math.sqrt(d)) / 2 * a ;
-                    x2 = "" + (-b - Math.sqrt(d)) / 2 * a ;
+                    x1 = "" + getFormatedNum((-b + Math.sqrt(d)) / 2 * a);
+                    x2 = "" + getFormatedNum((-b - Math.sqrt(d)) / 2 * a);
                 } // if √ isn't int
                 else {
-                    x1 = "(" + -b + "+ √" + d + ") / " + 2 * a;
-                    x2 = "(" + -b + "- √" + d + ") / " + 2 * a;
+                    x1 = "(" + getFormatedNum(-b) + " + √" + getFormatedNum(d) + ") / " + getFormatedNum(2 * a);
+                    x2 = "(" + getFormatedNum(-b) + " - √" + getFormatedNum(d) + ") / " + getFormatedNum(2 * a);
                 }
             } else if (d == 0) {
-                x1 = "" + -b / 2 * a;
-                x2 = "" + -b / 2 * a;
+                x1 = "" + getFormatedNum(-b / 2 * a);
+                x2 = x1;
             }
         }
     }
@@ -105,7 +116,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String answer;
         if (x1 == null) {
             answer = "Нет действительных корней!";
-        } else answer = x1 + "; " + x2;
+        } else answer = x1 + "; \n" + x2;
         answerTV.setText(answer);
     }
+
 }
